@@ -31,7 +31,9 @@ SOURCES += \
     balancedTree/Splay/SplayTree.cpp \
     main.cpp \
     mainmenu.cpp \
-    official.cpp
+    official.cpp \
+    entity.cpp \
+    balancedTree/balancedtree.cpp
 
 HEADERS += \
     balancedTree/BPlus/BPlusTree.h \
@@ -39,7 +41,9 @@ HEADERS += \
     balancedTree/Splay/Node.h \
     balancedTree/Splay/SplayTree.h \
     mainmenu.h \
-    official.h
+    official.h \
+    entity.h \
+    balancedTree/balancedtree.h
 
 FORMS += \
         mainmenu.ui
