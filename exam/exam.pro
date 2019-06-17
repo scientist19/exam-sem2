@@ -33,7 +33,8 @@ SOURCES += \
     mainmenu.cpp \
     official.cpp \
     entity.cpp \
-    balancedTree/balancedtree.cpp
+    balancedTree/balancedtree.cpp \
+    form.cpp
 
 HEADERS += \
     balancedTree/BPlus/BPlusTree.h \
@@ -43,10 +44,12 @@ HEADERS += \
     mainmenu.h \
     official.h \
     entity.h \
-    balancedTree/balancedtree.h
+    balancedTree/balancedtree.h \
+    form.h
 
 FORMS += \
-        mainmenu.ui
+        mainmenu.ui \
+    form.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
