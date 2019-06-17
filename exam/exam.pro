@@ -30,14 +30,16 @@ SOURCES += \
     balancedTree/Splay/Node.cpp \
     balancedTree/Splay/SplayTree.cpp \
     main.cpp \
-    mainmenu.cpp
+    mainmenu.cpp \
+    official.cpp
 
 HEADERS += \
     balancedTree/BPlus/BPlusTree.h \
     balancedTree/BPlus/Node.h \
     balancedTree/Splay/Node.h \
     balancedTree/Splay/SplayTree.h \
-    mainmenu.h
+    mainmenu.h \
+    official.h
 
 FORMS += \
         mainmenu.ui
