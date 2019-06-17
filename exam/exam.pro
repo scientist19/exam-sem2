@@ -25,11 +25,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        mainmenu.cpp
+    balancedTree/BPlus/BPlusTree.cpp \
+    balancedTree/BPlus/Node.cpp \
+    balancedTree/Splay/Node.cpp \
+    balancedTree/Splay/SplayTree.cpp \
+    main.cpp \
+    mainmenu.cpp
 
 HEADERS += \
-        mainmenu.h
+    balancedTree/BPlus/BPlusTree.h \
+    balancedTree/BPlus/Node.h \
+    balancedTree/Splay/Node.h \
+    balancedTree/Splay/SplayTree.h \
+    mainmenu.h
 
 FORMS += \
         mainmenu.ui
