@@ -144,7 +144,7 @@ void BPlusTree<Tkey, Tdata>::insert(Tkey key, Tdata* cost){
 }
 
 template <typename Tkey, typename Tdata>
-void BPlusTree<Tkey, Tdata>::print(int deep, Node<Tkey, Tdata>* node){
+QString BPlusTree<Tkey, Tdata>::print(int deep, Node<Tkey, Tdata>* node){
 
 	for (int i = 0; i < deep; i++)
 		std::cout << '\t';
@@ -182,6 +182,6 @@ Tdata* BPlusTree<Tkey, Tdata>::find(Tkey key){
 }
 
 template <typename Tkey, typename Tdata>
-void BPlusTree<Tkey, Tdata>::print(){
+QString BPlusTree<Tkey, Tdata>::print(){
 	print(0, root);
 }

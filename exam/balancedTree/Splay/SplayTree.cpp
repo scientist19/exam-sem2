@@ -241,9 +241,9 @@ Tdata* SplayTree<Tkey, Tdata>::find(const Tkey& key){
 }
 
 template <typename Tkey, typename Tdata>
-void SplayTree<Tkey, Tdata>::print(Node<Tkey, Tdata>* node, int deep){
+QString SplayTree<Tkey, Tdata>::print(Node<Tkey, Tdata>* node, int deep){
 
-	if (!node) return;
+    if (!node) return "";
 
 	print(node->left, deep+1);
 
@@ -254,14 +254,14 @@ void SplayTree<Tkey, Tdata>::print(Node<Tkey, Tdata>* node, int deep){
 }
 
 template <typename Tkey, typename Tdata>
-void SplayTree<Tkey, Tdata>::print(){
+QString SplayTree<Tkey, Tdata>::print(){
 	std::cout << "--------------------------------------------------------------------\n";
 	print(root, 0);
 	std::cout << "--------------------------------------------------------------------\n";
 }
 
 template <typename Tkey, typename Tdata>
-void SplayTree<Tkey, Tdata>::printTab(int k){
+QString SplayTree<Tkey, Tdata>::printTab(int k){
 	for (int i = 0; i < k; i++)
 		std::cout << "        ";
 }
