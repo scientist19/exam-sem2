@@ -255,13 +255,21 @@ QString SplayTree<Tkey, Tdata>::print(Node<Tkey, Tdata>* node, int deep){
 
 template <typename Tkey, typename Tdata>
 QString SplayTree<Tkey, Tdata>::print(){
-	std::cout << "--------------------------------------------------------------------\n";
-	print(root, 0);
-	std::cout << "--------------------------------------------------------------------\n";
+
+    QString result = "";
+
+    result += "--------------------------------------------------------------------\n";
+    result += print(root, 0);
+    result += "--------------------------------------------------------------------\n";
+
+    return result;
 }
 
 template <typename Tkey, typename Tdata>
 QString SplayTree<Tkey, Tdata>::printTab(int k){
+
+    QString result = "";
 	for (int i = 0; i < k; i++)
-		std::cout << "        ";
+        result += "        ";
+    return result;
 }

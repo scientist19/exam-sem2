@@ -19,6 +19,10 @@ class SplayTree : public BalancedTree<Tkey, Tdata>
         QString print(Node<Tkey, Tdata>* node, int deep);
         QString printTab(int k);
 
+        QString parse(QString command) override;
+        void clear() override;
+        QString help() override;
+
 	private:
 
 		Node<Tkey, Tdata>* root = nullptr;

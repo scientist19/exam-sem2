@@ -14,6 +14,9 @@ class BPlusTree : public BalancedTree<Tkey, Tdata>
         void insert(Tkey key, Tdata* cost) override;
         Tdata* find(Tkey key) override;
         QString print() override;
+        QString parse(QString command) override;
+        void clear() override;
+        QString help() override;
 
 	private:
 		int dimension;

@@ -146,23 +146,26 @@ void BPlusTree<Tkey, Tdata>::insert(Tkey key, Tdata* cost){
 template <typename Tkey, typename Tdata>
 QString BPlusTree<Tkey, Tdata>::print(int deep, Node<Tkey, Tdata>* node){
 
+    QString result = "";
 	for (int i = 0; i < deep; i++)
-		std::cout << '\t';
+        result += '\t';
 
-	std::cout << "{ ";
+    result += "{ ";
 	for (int i = 0; i < node->keyNumber; i++)
-		std::cout << node->key[i] << ' ';
+        result += node->key[i] + ' ';
 
-	std::cout << "}\n";
+    result += "}\n";
 
 	bool needMargin = false;
 	for (int i = 0; i <= node->keyNumber; ++i){
 		if (node->child[i]){
-			print(deep + 1, node->child[i]);
+            result += print(deep + 1, node->child[i]);
 			needMargin = true;
 		}
 	}
-	if (needMargin) std::cout << '\n';
+    if (needMargin) result += '\n';
+
+    return result;
 }
 
 template <typename Tkey, typename Tdata>
@@ -183,5 +186,5 @@ Tdata* BPlusTree<Tkey, Tdata>::find(Tkey key){
 
 template <typename Tkey, typename Tdata>
 QString BPlusTree<Tkey, Tdata>::print(){
-	print(0, root);
+    return print(0, root);
 }
