@@ -2,26 +2,26 @@
 #define SPLAYTREE_H
 
 #include "Node.h"
-#include "../balancedtree.h"
+#include "entity.h"
 #include "../../official.h"
 
 template <typename Tkey, typename Tdata>
-class SplayTree : public BalancedTree<Tkey, Tdata>
+class SplayTree : public Entity
 {
 	public:
 		SplayTree();
 		virtual ~SplayTree();
 
-        void insert(const Tkey& key, Tdata* data) override;
+        void insert(const Tkey& key, Tdata* data);
 		void remove(const Tkey& key);
-        Tdata* find(const Tkey& key) override;
+        Tdata* find(const Tkey& key);
 
         QString print() override;
         QString print(Node<Tkey, Tdata>* node, int deep);
         QString printTab(int k);
 
         QString parse(QString command) override;
-        void clear() override;
+//        void clear() override;
         QString help() override;
 
 	private:

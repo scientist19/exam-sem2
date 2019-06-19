@@ -11,8 +11,8 @@ class BPlusTree : public BalancedTree<Tkey, Tdata>
 		BPlusTree();
 		virtual ~BPlusTree();
 
-        void insert(Tkey key, Tdata* cost) override;
-        Tdata* find(Tkey key) override;
+        void insert(Tkey key, Tdata* cost);
+        Tdata* find(Tkey key);
         QString print() override;
         QString parse(QString command) override;
         void clear() override;

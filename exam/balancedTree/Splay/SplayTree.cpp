@@ -244,13 +244,17 @@ template <typename Tkey, typename Tdata>
 QString SplayTree<Tkey, Tdata>::print(Node<Tkey, Tdata>* node, int deep){
 
     if (!node) return "";
+    QString result = "";
 
-	print(node->left, deep+1);
+    result += print(node->left, deep+1);
 
-	printTab(deep);
-	std::cout << ">" << node->data->surname << "(" << node->data->mean << ")\n";
+    result += printTab(deep);
+    result += node->data->printSurname() + "\n";
+//	std::cout << ">" << node->data->surname << "(" << node->data->mean << ")\n";
 
-	print(node->right, deep+1);
+    result += print(node->right, deep+1);
+
+    return result;
 }
 
 template <typename Tkey, typename Tdata>
@@ -326,3 +330,5 @@ QString SplayTree<Tkey, Tdata>::help()
            "add [number] - to add few random officials\n" +
            "clear - to clear tree\n";
 }
+
+template class SplayTree<QString, Official>;

@@ -34,7 +34,8 @@ SOURCES += \
     official.cpp \
     entity.cpp \
     balancedTree/balancedtree.cpp \
-    form.cpp
+    form.cpp \
+    controller.cpp
 
 HEADERS += \
     balancedTree/BPlus/BPlusTree.h \
@@ -45,7 +46,8 @@ HEADERS += \
     official.h \
     entity.h \
     balancedTree/balancedtree.h \
-    form.h
+    form.h \
+    controller.h
 
 FORMS += \
         mainmenu.ui \

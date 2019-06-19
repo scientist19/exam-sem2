@@ -1,12 +1,11 @@
-#include "mainmenu.h"
+#include "controller.h"
 #include <QApplication>
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    mainMenu w;
-    w.show();
+    Controller controller;
 
     return a.exec();
 }

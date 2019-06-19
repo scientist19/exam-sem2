@@ -3,20 +3,24 @@
 
 #include <QWidget>
 
+class Controller;
+
 namespace Ui {
-class mainMenu;
+class MainMenu;
 }
 
-class mainMenu : public QWidget
+class MainMenu : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit mainMenu(QWidget *parent = nullptr);
-    ~mainMenu();
+    explicit MainMenu(QWidget *parent = nullptr);
+    ~MainMenu();
 
 private:
-    Ui::mainMenu *ui;
+    Ui::MainMenu *ui;
+
+    friend Controller;
 };
 
 #endif // MAINMENU_H

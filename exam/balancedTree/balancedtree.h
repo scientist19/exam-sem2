@@ -8,9 +8,10 @@ class BalancedTree : public Entity
 {
 public:
     BalancedTree();
-
-    virtual void insert(Tkey key, Tdata data) = 0;
+/*
+    virtual void insert(const Tkey key, Tdata data) = 0;
     virtual Tdata* find(Tkey key) = 0;
+    */
 
     QString print() override;
     void add(Official official) override;

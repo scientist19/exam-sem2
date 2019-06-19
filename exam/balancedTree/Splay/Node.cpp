@@ -1,4 +1,7 @@
 #include "Node.h"
+#include "official.h"
+
+#include <QString>
 
 template <typename Tkey, typename Tdata>
 Node<Tkey, Tdata>::Node()
@@ -24,3 +27,5 @@ Node<Tkey, Tdata>::~Node()
 	if (right) right->~Node();
 	delete data;
 }
+
+template class Node<QString, Official>;
