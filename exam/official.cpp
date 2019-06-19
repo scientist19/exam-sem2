@@ -9,6 +9,24 @@ Official::Official(QString min, QString org, QString div, QString emp) :
 
 }
 
+Official::Official()
+{
+    ministry = Ministries[rand() % Ministries.length()];
+    organization = Organizations[rand() % Organizations.length()];
+    division = Divisions[rand() % Divisions.length()];
+    employee = Employees[rand() % Employees.length()];
+}
+
+QString Official::printSurname()
+{
+    return employee + "[" + ministry + ", " + organization + ", " + division + "]";
+}
+
+QString Official::printInfo()
+{
+    return "[" + ministry + ", " + organization + ", " + division + ", " + employee + "]";
+}
+
 bool operator==(const Official &p1, const Official &p2)
 {
     return (p1.division == p2.division &&
