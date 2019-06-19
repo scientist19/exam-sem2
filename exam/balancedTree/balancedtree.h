@@ -12,11 +12,12 @@ public:
     virtual void insert(Tkey key, Tdata data) = 0;
     virtual Tdata* find(Tkey key) = 0;
 
-    virtual QString print() override;
-    virtual void fillWithRandom(int l, int r) = 0;
-    virtual QString parse(QString command) override;
-    virtual void clear() override;
-    virtual QString help() override;
+    QString print() override;
+    void add(Official official) override;
+    void fillWithRandom(int n) override;
+    QString parse(QString command) override;
+    void clear() override;
+    QString help() override;
 };
 
 #endif // BALANCEDTREE_H

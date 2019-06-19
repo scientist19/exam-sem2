@@ -273,3 +273,56 @@ QString SplayTree<Tkey, Tdata>::printTab(int k){
         result += "        ";
     return result;
 }
+
+template<typename Tkey, typename Tdata>
+QString SplayTree<Tkey, Tdata>::parse(QString command)
+{
+    QStringList list = command.split(' ', QString::SkipEmptyParts);
+    if (list.empty()) return "";
+    if (list[0] == "add" && list.length() == 1){
+        Official* official = new Official();
+        insert(official->getKey(), official);
+        return "Official " + official->printSurname() + "is successfully added to the tree.\n";
+    }
+    else if (list[0] == "add"){
+        int n = list[1].toInt();
+        QString res = "";
+        for (int i = 0; i < n; i++){
+            Official* official = new Official();
+            insert(official->getKey(), official);
+            res += "Official " + official->printSurname() + "is successfully added to the tree.\n";
+        }
+        return res;
+    }
+    else if (list[0] == "find" && list.length() > 1){
+        QString key = list[1];
+        Tdata* result = find(key);
+        if (!result) return "There is no official with key " + key + "\n";
+        return "Official " + result->printSurname() + "is finded.\n";
+    }
+    else if (list[0] == "re" && list.length() > 1){
+        QString key = list[1];
+        Tdata* result = find(key);
+        if (!result) return "There is no official with key " + key + "\n";
+        remove(key);
+        return "Official " + result->printSurname() + " is removed.\n";
+    }
+    else if (list[0] == "find" || list[0] == "re"){
+        return "There are too few arguments. Look at the helpMe section.\n";
+    }
+    else if (list[0] == "clear"){
+        return "Not available yet!";
+    }
+
+    return "Unknown command. Please look at helpMe.\n";
+}
+
+template<typename Tkey, typename Tdata>
+QString SplayTree<Tkey, Tdata>::help()
+{
+    return QString("add - to add random official\n") +
+           "find [employee] - to find official by surname\n" +
+           "re [employee] - to remove official by surname\n" +
+           "add [number] - to add few random officials\n" +
+           "clear - to clear tree\n";
+}

@@ -18,6 +18,7 @@ class Official{
 
         QString printSurname();
         QString printInfo();
+        QString getKey();
 
     friend bool operator== (const Official &p1, const Official &p2);
     friend bool operator!= (const Official &p1, const Official &p2);

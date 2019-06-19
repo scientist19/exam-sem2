@@ -27,6 +27,11 @@ QString Official::printInfo()
     return "[" + ministry + ", " + organization + ", " + division + ", " + employee + "]";
 }
 
+QString Official::getKey()
+{
+    return employee;
+}
+
 bool operator==(const Official &p1, const Official &p2)
 {
     return (p1.division == p2.division &&

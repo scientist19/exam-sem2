@@ -3,6 +3,7 @@
 
 #include "Node.h"
 #include "../balancedtree.h"
+#include "../../official.h"
 
 template <typename Tkey, typename Tdata>
 class SplayTree : public BalancedTree<Tkey, Tdata>

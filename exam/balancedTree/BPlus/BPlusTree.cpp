@@ -5,7 +5,7 @@
 template <typename Tkey, typename Tdata>
 BPlusTree<Tkey, Tdata>::BPlusTree(){
 
-	dimension = 2;
+    dimension = 3;
 }
 
 template <typename Tkey, typename Tdata>
@@ -187,4 +187,13 @@ Tdata* BPlusTree<Tkey, Tdata>::find(Tkey key){
 template <typename Tkey, typename Tdata>
 QString BPlusTree<Tkey, Tdata>::print(){
     return print(0, root);
+}
+
+template<typename Tkey, typename Tdata>
+QString BPlusTree<Tkey, Tdata>::help()
+{
+    return QString("add - to add random official\n") +
+           "find [employee] - to find official by surname\n" +
+           "add [number] - to add few random officials\n" +
+           "clear - to clear tree\n";
 }
