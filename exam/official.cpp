@@ -19,7 +19,7 @@ Official::Official()
 
 QString Official::printSurname()
 {
-    return employee + "[" + ministry + ", " + organization + ", " + division + "]";
+    return employee + " [" + ministry + ", " + organization + ", " + division + "]";
 }
 
 QString Official::printInfo()

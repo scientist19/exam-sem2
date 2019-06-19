@@ -286,7 +286,7 @@ QString SplayTree<Tkey, Tdata>::parse(QString command)
     if (list[0] == "add" && list.length() == 1){
         Official* official = new Official();
         insert(official->getKey(), official);
-        return "Official " + official->printSurname() + "is successfully added to the tree.\n";
+        return "Official " + official->printSurname() + " is successfully added to the tree.\n";
     }
     else if (list[0] == "add"){
         int n = list[1].toInt();
@@ -294,7 +294,7 @@ QString SplayTree<Tkey, Tdata>::parse(QString command)
         for (int i = 0; i < n; i++){
             Official* official = new Official();
             insert(official->getKey(), official);
-            res += "Official " + official->printSurname() + "is successfully added to the tree.\n";
+            res += "Official " + official->printSurname() + " is successfully added to the tree.\n";
         }
         return res;
     }
@@ -302,20 +302,21 @@ QString SplayTree<Tkey, Tdata>::parse(QString command)
         QString key = list[1];
         Tdata* result = find(key);
         if (!result) return "There is no official with key " + key + "\n";
-        return "Official " + result->printSurname() + "is finded.\n";
+        return "Official " + result->printSurname() + " is found.\n";
     }
     else if (list[0] == "re" && list.length() > 1){
         QString key = list[1];
         Tdata* result = find(key);
         if (!result) return "There is no official with key " + key + "\n";
+        QString toPrint = result->printSurname();
         remove(key);
-        return "Official " + result->printSurname() + " is removed.\n";
+        return "Official " + toPrint + " is removed.\n";
     }
     else if (list[0] == "find" || list[0] == "re"){
         return "There are too few arguments. Look at the helpMe section.\n";
     }
     else if (list[0] == "clear"){
-        return "Not available yet!";
+        return "Not available yet!\n";
     }
 
     return "Unknown command. Please look at helpMe.\n";
