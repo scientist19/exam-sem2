@@ -322,6 +322,12 @@ QString SplayTree<Tkey, Tdata>::parse(QString command)
 }
 
 template<typename Tkey, typename Tdata>
+void SplayTree<Tkey, Tdata>::add(Official official)
+{
+    insert(official.getKey(), &official);
+}
+
+template<typename Tkey, typename Tdata>
 QString SplayTree<Tkey, Tdata>::help()
 {
     return QString("add - to add random official\n") +

@@ -30,7 +30,7 @@
     </widget>
    </item>
    <item row="3" column="2">
-    <widget class="QTextEdit" name="hint">
+    <widget class="QTextEdit" name="helpMe">
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -87,5 +87,25 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>console</sender>
+   <signal>textChanged()</signal>
+   <receiver>Form</receiver>
+   <slot>slotParseConsole()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>674</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>612</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotParseConsole()</slot>
+ </slots>
 </ui>

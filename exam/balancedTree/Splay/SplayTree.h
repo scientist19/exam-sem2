@@ -21,7 +21,7 @@ class SplayTree : public Entity
         QString printTab(int k);
 
         QString parse(QString command) override;
-//        void clear() override;
+        void add(Official official) override;
         QString help() override;
 
 	private:

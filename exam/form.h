@@ -19,6 +19,11 @@ public:
     explicit Form(EntityEnum entityType, QWidget *parent = nullptr);
     ~Form();
 
+    void displayEntity();
+
+public slots:
+    void slotParseConsole();
+
 private:
     Ui::Form *ui;
     Entity* entity;

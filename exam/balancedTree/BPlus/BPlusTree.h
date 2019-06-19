@@ -15,7 +15,6 @@ class BPlusTree : public BalancedTree<Tkey, Tdata>
         Tdata* find(Tkey key);
         QString print() override;
         QString parse(QString command) override;
-        void clear() override;
         QString help() override;
 
 	private:
