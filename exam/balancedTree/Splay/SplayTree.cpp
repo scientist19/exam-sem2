@@ -323,9 +323,9 @@ QString SplayTree<Tkey, Tdata>::parse(QString command)
 }
 
 template<typename Tkey, typename Tdata>
-void SplayTree<Tkey, Tdata>::add(Official official)
+void SplayTree<Tkey, Tdata>::add(Official* official)
 {
-    insert(official.getKey(), &official);
+    insert(official->getKey(), official);
 }
 
 template<typename Tkey, typename Tdata>

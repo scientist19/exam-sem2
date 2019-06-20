@@ -1,5 +1,53 @@
 #include "official.h"
 
+QStringList Official::Ministries = {
+    "Minitrue",
+    "Minipax",
+    "Miniplenty",
+    "Miniluv"
+};
+
+QStringList Official::Organizations = {
+    "Radiant",
+    "Dire"
+};
+
+QStringList Official::Divisions = {
+    "Div1",
+    "Div2",
+    "Div3",
+    "Div4"
+};
+
+QStringList Official::Employees = {
+    "Ivanov",
+    "Petrov",
+    "Smith",
+    "Johnson",
+    "Williams",
+    "Jones",
+    "Brown",
+    "Davis",
+    "Miller",
+    "Wilson",
+    "Moore",
+    "Taylor",
+    "Anderson",
+    "Thomas",
+    "Jackson",
+    "Harris",
+    "Martin",
+    "Thompson",
+    "Garcia",
+    "Martinez",
+    "Robinson",
+    "Clark",
+    "Rodriguez",
+    "Lewis",
+    "Lee",
+    "Walker"
+};
+
 Official::Official(QString min, QString org, QString div, QString emp) :
     ministry(min),
     organization(org),
@@ -11,10 +59,10 @@ Official::Official(QString min, QString org, QString div, QString emp) :
 
 Official::Official()
 {
-    ministry = Ministries[rand() % Ministries.length()];
-    organization = Organizations[rand() % Organizations.length()];
-    division = Divisions[rand() % Divisions.length()];
-    employee = Employees[rand() % Employees.length()];
+    ministry = getRandomMinistry();
+    organization = getRandomOrganization();
+    division = getRandomDivision();
+    employee = getRandomEmployee();
 }
 
 QString Official::printSurname()
@@ -30,6 +78,26 @@ QString Official::printInfo()
 QString Official::getKey()
 {
     return employee;
+}
+
+QString Official::getRandomMinistry()
+{
+    return Ministries[rand() % Ministries.length()];
+}
+
+QString Official::getRandomOrganization()
+{
+    return Organizations[rand() % Organizations.length()];
+}
+
+QString Official::getRandomDivision()
+{
+    return Divisions[rand() % Divisions.length()];
+}
+
+QString Official::getRandomEmployee()
+{
+    return Employees[rand() % Employees.length()];
 }
 
 bool operator==(const Official &p1, const Official &p2)

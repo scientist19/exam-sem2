@@ -23,10 +23,13 @@ public:
 
 public slots:
     void slotParseConsole();
+    void slotAddToEntity();
 
 private:
     Ui::Form *ui;
     Entity* entity;
+
+    void init();
 };
 
 #endif // FORM_H

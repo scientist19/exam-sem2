@@ -10,7 +10,7 @@ public:
     Entity();
 
     virtual QString print() = 0;
-    virtual void add(Official official) = 0;
+    virtual void add(Official* official) = 0;
     virtual QString help() = 0;
     virtual QString parse(QString command) = 0;
 };
